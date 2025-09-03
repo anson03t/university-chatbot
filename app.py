@@ -124,7 +124,7 @@ st.markdown(
     """
     <style>
     .stTextInput>label {
-        font-size: 24px;  /* Larger font size for the label */
+        font-size: 50px;  /* Larger font size for the label */
         font-weight: bold;
     }
     </style>

@@ -72,34 +72,30 @@ add_bg_from_local("graduation_background.png")
 st.markdown(
     """
     <style>
-    .custom-banner {{
-        position: absolute;
+    .custom-banner {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #111;  /* dark header */
+        background-color: #111;  /* dark banner background */
         color: white;
         padding: 12px 20px;
         font-size: 22px;
         font-weight: bold;
-        display: flex;
-        align-items: center;
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }}
-    .custom-banner img {{
-        height: 32px;
-        margin-right: 12px;
-    }}
+    }
     </style>
 
     <div class="custom-banner">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Universiti_Tunku_Abdul_Rahman_%28UTAR%29_logo.png">
         🎓 UTAR University Life Chatbot
     </div>
     """,
     unsafe_allow_html=True
 )
+
+# Add spacing so content does not overlap banner
+st.markdown("<br><br><br><br>", unsafe_allow_html=True)
 
 if "history" not in st.session_state:
     st.session_state.history = []

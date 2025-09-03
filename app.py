@@ -20,28 +20,29 @@ def add_bg_from_local(image_file):
         color: black !important;
         }}
 
-        .chat-box {{
-            background: rgba(255, 255, 255, 0.7);
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 10px;
-        }}
+       .chat-box {{
+           background: rgba(255, 255, 255, 0.9);  /* solid white with slight transparency */
+           padding: 15px;
+           border-radius: 12px;
+           margin-top: 10px;
+           max-width: 800px;
+         }}
 
         .stTextInput input {{
-        color: white !important;
+           color: white !important;
         }}
 
         .stButton>button {{
-        background-color: #e74c3c;   
-        color: white;
-        border-radius: 8px;
-        border: none;
-        padding: 6px 16px;
-        font-weight: bold;
+           background-color: #e74c3c;   
+           color: white;
+           border-radius: 8px;
+           border: none;
+           padding: 6px 16px;
+           font-weight: bold;
         }}
         .stButton>button:hover {{
-        background-color: #c0392b;  
-        color: white;
+           background-color: #c0392b;  
+           color: white;
         }}
 
         </style>
@@ -91,14 +92,13 @@ if st.button("Ask") and user_input:
 
 if st.session_state.history:
     st.subheader("💬 Conversation History")
-    # Open the white overlay box
+
+    # Open a styled white box
     st.markdown("<div class='chat-box'>", unsafe_allow_html=True)
 
-    # Put conversation inside the box
-    conversation_text = ""
+    # Show each message inside the box
     for speaker, text in st.session_state.history:
-        conversation_text += f"**{speaker}:** {text}  \n"
-    st.markdown(conversation_text, unsafe_allow_html=True)
+        st.markdown(f"**{speaker}:** {text}", unsafe_allow_html=True)
 
-    # Close the box
+    # Close the white box
     st.markdown("</div>", unsafe_allow_html=True)

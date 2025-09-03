@@ -120,6 +120,18 @@ def chatbot_response(user_input):
 
 user_input = st.text_input("Questions about life in the university:")
 
+st.markdown(
+    """
+    <style>
+    .stTextInput>label {
+        font-size: 24px;  /* Larger font size for the label */
+        font-weight: bold;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if st.button("Ask") and user_input:
     response = chatbot_response(user_input)
 

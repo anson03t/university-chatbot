@@ -8,20 +8,20 @@ st.markdown(
     """
     <style>
     .custom-banner {
-        position: absolute;   /* lock it to the top-left */
-        top: 10px;            /* adjust spacing below Streamlit navbar */
-        left: 15px;           /* offset from left */
+        position: absolute;   /* stick to the top-left corner */
+        top: 8px;             /* just below the black Streamlit nav */
+        left: 15px;           /* offset from the left */
         background-color: #111;  
         color: white;
-        padding: 10px 18px;
-        font-size: 20px;
+        padding: 8px 16px;
+        font-size: 18px;
         font-weight: bold;
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        z-index: 9999;        /* ensure it stays above content */
-        width: auto;          /* don’t stretch across full width */
-        display: inline-flex; 
+        z-index: 9999;
+        display: inline-flex; /* keep it compact */
         align-items: center;
+        width: auto;          /* banner only as wide as its content */
     }
     .custom-banner span {
         margin-left: 8px;
@@ -34,6 +34,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 
 
 def add_bg_from_local(image_file):

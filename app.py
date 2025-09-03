@@ -26,8 +26,8 @@ def add_bg_from_local(image_file):
            border-radius: 12px;
            margin-top: 10px;
            max-width: 800px;
-           max-height: 300px;   /* optional: limit height */
-           overflow-y: auto;    /* optional: scroll if too long */
+           max-height: 300px;   
+           overflow-y: auto;    
         }}
 
        .chat-box p {{
@@ -36,10 +36,15 @@ def add_bg_from_local(image_file):
         }}
 
        .chat-box b {{
-           color: #e74c3c; /* make speaker label red */
+           color: #e74c3c; 
         }}
 
 
+       .chat-box hr {{
+           border: 0;
+           border-top: 1px dashed #bbb;  /* dashed line */
+           margin: 8px 0;
+        }}
         .stTextInput input {{
            color: white !important;
         }}
@@ -104,12 +109,15 @@ if st.button("Ask") and user_input:
 if st.session_state.history:
     st.subheader("💬 Conversation History")
 
-    # Build conversation HTML
     conversation_html = ""
-    for speaker, text in st.session_state.history:
+    for i, (speaker, text) in enumerate(st.session_state.history):
+        # Add message
         conversation_html += f"<p><b>{speaker}:</b> {text}</p>"
 
-    # Wrap everything inside one white box
+        # Add line after each user+bot pair
+        if i % 2 == 1 and i != len(st.session_state.history) - 1:
+            conversation_html += "<hr style='border:1px solid #ddd; margin:8px 0;'>"
+
     st.markdown(
         f"""
         <div class="chat-box">

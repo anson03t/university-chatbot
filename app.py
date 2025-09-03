@@ -85,7 +85,6 @@ user_input = st.text_input("Ask me anything about university life:")
 if st.button("Ask") and user_input:
     response = chatbot_response(user_input)
 
-    # Save to history
     st.session_state.history.append(("You", user_input))
     st.session_state.history.append(("Bot", response))
 
@@ -93,12 +92,13 @@ if st.button("Ask") and user_input:
 if st.session_state.history:
     st.subheader("💬 Conversation History")
 
-    # Open a styled white box
     st.markdown("<div class='chat-box'>", unsafe_allow_html=True)
 
-    # Show each message inside the box
+    conversation_text = ""
     for speaker, text in st.session_state.history:
-        st.markdown(f"**{speaker}:** {text}", unsafe_allow_html=True)
+        conversation_text += f"**{speaker}:** {text}  \n"
 
-    # Close the white box
+
+    st.markdown(conversation_text, unsafe_allow_html=True)
+
     st.markdown("</div>", unsafe_allow_html=True)

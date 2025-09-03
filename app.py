@@ -91,7 +91,14 @@ if st.button("Ask") and user_input:
 
 if st.session_state.history:
     st.subheader("💬 Conversation History")
+    # Open the white overlay box
     st.markdown("<div class='chat-box'>", unsafe_allow_html=True)
+
+    # Put conversation inside the box
+    conversation_text = ""
     for speaker, text in st.session_state.history:
-        st.write(f"**{speaker}:** {text}")
+        conversation_text += f"**{speaker}:** {text}  \n"
+    st.markdown(conversation_text, unsafe_allow_html=True)
+
+    # Close the box
     st.markdown("</div>", unsafe_allow_html=True)

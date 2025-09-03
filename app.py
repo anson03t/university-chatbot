@@ -32,6 +32,18 @@ st.markdown(
     .stTextInput input {
         color: white !important;
     }
+    .stButton>button {
+        background-color: #e74c3c;   /* red */
+        color: white;
+        border-radius: 8px;
+        border: none;
+        padding: 6px 16px;
+        font-weight: bold;
+    }
+    .stButton>button:hover {
+        background-color: #c0392b;  /* darker red */
+        color: white;
+    }
     </style>
     """,
     unsafe_allow_html=True

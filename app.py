@@ -3,12 +3,11 @@ import base64
 
 st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
 
-# --- Custom Banner at Top ---
 st.markdown(
     """
     <style>
     .custom-banner {
-        position: fixed;
+        position: relative;   /* relative so it doesn't conflict with Streamlit nav */
         top: 0;
         left: 0;
         width: 100%;
@@ -21,13 +20,13 @@ st.markdown(
         display: flex;
         align-items: center;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        margin-bottom: 20px;  /* spacing before chatbot starts */
     }
     .custom-banner span {
         margin-left: 10px;
     }
     /* Push chatbot content below banner */
     .block-container {
-        padding-top: 80px !important;
         max-width: 900px;
         margin: auto;
     }

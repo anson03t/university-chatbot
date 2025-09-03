@@ -1,7 +1,7 @@
 import streamlit as st
 import base64  # needed for encoding image
 
-st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="centered")
+st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:
@@ -79,11 +79,14 @@ st.markdown(
         width: 100%;
         background-color: #111;  /* dark banner background */
         color: white;
-        padding: 12px 20px;
+        padding: 12px 25px;
         font-size: 22px;
         font-weight: bold;
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .main > div:first-child {
+        padding-top: 70px; /* push content down below banner */
     }
     </style>
 

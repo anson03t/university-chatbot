@@ -28,10 +28,6 @@ st.markdown(
         max-width: 900px;
         margin: auto;
     }
-    .stTextInput input {
-        font-size: 20px; /* Larger font size */
-        padding: 12px 20px; /* Add padding for better spacing */
-    }
     </style>
 
     <div class="custom-banner">
@@ -80,6 +76,15 @@ def add_bg_from_local(image_file):
         .stTextInput input {{
             color: white !important;
         }}
+       .stTextInput label {
+            font-size: 24px; /* Larger font size for label */
+            font-weight: bold;
+         }
+
+        .stTextInput input {
+            font-size: 20px; /* Larger font size for input field */
+            padding: 12px 20px; /* Add padding for better spacing */
+         }
         .stButton>button {{
             background-color: #e74c3c;   
             color: white;

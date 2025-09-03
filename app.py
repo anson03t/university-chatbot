@@ -85,8 +85,11 @@ st.markdown(
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
-    .main > div:first-child {
-        padding-top: 70px; /* push content down below banner */
+    /* Push content below banner */
+    .block-container {
+        padding-top: 80px !important;
+        max-width: 800px;  /* keep chatbot area compact */
+        margin: auto;
     }
     </style>
 

@@ -8,28 +8,23 @@ st.markdown(
     """
     <style>
     .custom-banner {
-        position: relative;   /* relative so it doesn't conflict with Streamlit nav */
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #111;  /* dark banner background */
+        position: absolute;   /* lock it to the top-left */
+        top: 10px;            /* adjust spacing below Streamlit navbar */
+        left: 15px;           /* offset from left */
+        background-color: #111;  
         color: white;
-        padding: 15px 30px;
-        font-size: 22px;
+        padding: 10px 18px;
+        font-size: 20px;
         font-weight: bold;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
+        border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        margin-bottom: 20px;  /* spacing before chatbot starts */
+        z-index: 9999;        /* ensure it stays above content */
+        width: auto;          /* don’t stretch across full width */
+        display: inline-flex; 
+        align-items: center;
     }
     .custom-banner span {
-        margin-left: 10px;
-    }
-    /* Push chatbot content below banner */
-    .block-container {
-        max-width: 900px;
-        margin: auto;
+        margin-left: 8px;
     }
     </style>
 
@@ -39,6 +34,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:

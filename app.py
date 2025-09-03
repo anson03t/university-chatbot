@@ -8,23 +8,27 @@ st.markdown(
     """
     <style>
     .custom-banner {
-        position: fixed;     /* lock it in place */
-        top: 8px;            /* a bit below Streamlit nav bar */
-        left: 12px;          /* stick to left edge */
+        position: fixed;  /* Fix it at the top */
+        top: 8px;         /* Just below the navbar */
+        left: 12px;       /* Left side */
         background-color: #111;
         color: white;
         padding: 8px 16px;
         font-size: 18px;
         font-weight: bold;
-        z-index: 2000;       /* stay above other elements */
+        z-index: 2000;    /* On top of everything else */
         display: inline-flex;
         align-items: center;
         border-radius: 5px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        width: auto;         /* shrink to fit text */
+        width: auto;      /* Shrink to fit content */
     }
     .custom-banner span {
         margin-left: 6px;
+    }
+    /* Make sure no element is pushed down by the banner */
+    .stApp {
+        margin-top: 80px !important;  /* Push down content by 80px */
     }
     </style>
 
@@ -34,7 +38,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:
         encoded = base64.b64encode(f.read()).decode()

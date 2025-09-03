@@ -3,30 +3,42 @@ import base64
 
 st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
 
+# --- Custom Banner at Top ---
 st.markdown(
     """
     <style>
     .custom-banner {
-        position: absolute;
-        top: 20px;    /* distance from very top */
-        left: 20px;   /* distance from very left */
-        background-color: rgba(0,0,0,0.8);  /* semi-transparent black */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;  /* dark banner background */
         color: white;
-        padding: 12px 20px;
-        font-size: 20px;
+        padding: 15px 30px;
+        font-size: 22px;
         font-weight: bold;
-        border-radius: 8px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .custom-banner span {
+        margin-left: 10px;
+    }
+    /* Push chatbot content below banner */
+    .block-container {
+        padding-top: 80px !important;
+        max-width: 900px;
+        margin: auto;
     }
     </style>
 
     <div class="custom-banner">
-        🎓 UTAR University Life Chatbot
+        🎓 <span>UTAR University Life Chatbot</span>
     </div>
     """,
     unsafe_allow_html=True
 )
-
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:

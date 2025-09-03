@@ -9,8 +9,8 @@ st.markdown(
     <style>
     .custom-banner {
         position: fixed;    /* Fixed so it stays on top */
-        top: 60px;          /* Distance from top */
-        left: 5px;         /* Distance from left */
+        top: 65px;          /* Distance from top */
+        left: 0px;         /* Distance from left */
         background-color: #111;
         color: white;
         padding: 15px 30px;

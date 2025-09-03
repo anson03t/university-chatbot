@@ -8,20 +8,28 @@ st.markdown(
     """
     <style>
     .custom-banner {
-        position: absolute;   /* fix it to top-left */
-        top: 5px;             /* small offset from top navbar */
-        left: 15px;           /* align from left edge */
-        background-color: #111;  
+        position: relative;   /* relative so it doesn't conflict with Streamlit nav */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;  /* dark banner background */
         color: white;
-        padding: 8px 16px;
-        font-size: 20px;
+        padding: 15px 30px;
+        font-size: 22px;
         font-weight: bold;
-        border-radius: 6px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        z-index: 9999;        /* always above main content */
+        margin-bottom: 20px;  /* spacing before chatbot starts */
     }
     .custom-banner span {
-        margin-left: 6px;
+        margin-left: 10px;
+    }
+    /* Push chatbot content below banner */
+    .block-container {
+        max-width: 900px;
+        margin: auto;
     }
     </style>
 

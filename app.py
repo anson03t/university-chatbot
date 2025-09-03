@@ -92,7 +92,7 @@ def chatbot_response(user_input):
         if any(word in user_input for word in keywords):
             return response
 
-    return " Sorry, I don’t know that yet. Try asking about library, exams, cafeteria, sports, WiFi, bus, admin office, or lecturers."
+    return " Sorry, I do not know anything about that. Attempt to inquire about library, exams, cafeteria, sports, WiFi, bus, admin office or lecturers."
 
 user_input = st.text_input("Ask me anything about university life:")
 

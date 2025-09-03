@@ -8,20 +8,20 @@ st.markdown(
     """
     <style>
     .custom-banner {
-        position: absolute;   /* stays at the top-left corner */
-        top: 5px;             /* adjust down a bit from navbar */
-        left: 15px;           /* adjust right slightly */
+        position: absolute;   /* fix it to top-left */
+        top: 5px;             /* small offset from top navbar */
+        left: 15px;           /* align from left edge */
         background-color: #111;  
         color: white;
-        padding: 10px 20px;
+        padding: 8px 16px;
         font-size: 20px;
         font-weight: bold;
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        z-index: 1000;        /* keep it above content */
+        z-index: 9999;        /* always above main content */
     }
     .custom-banner span {
-        margin-left: 8px;
+        margin-left: 6px;
     }
     </style>
 

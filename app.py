@@ -28,16 +28,6 @@ st.markdown(
         max-width: 900px;
         margin: auto;
     }
-
-    .stTextInput label {
-        font-size: 24px; /* Larger font size for label */
-        font-weight: bold;
-    }
-
-    .stTextInput input {
-        font-size: 20px; /* Larger font size for input field */
-        padding: 12px 20px; /* Add padding for better spacing */
-    }
     </style>
 
     <div class="custom-banner">
@@ -129,6 +119,22 @@ def chatbot_response(user_input):
     return " Sorry, I do not know anything about that. Attempt to inquire about library, exams, cafeteria, sports, WiFi, bus, admin office or lecturers."
 
 user_input = st.text_input("Questions about life in the university:")
+
+st.markdown(
+    """
+    <style>
+    .stTextInput label {
+        font-size: 24px;  /* Larger font size for the label */
+        font-weight: bold;
+    }
+    .stTextInput input {
+        font-size: 20px;  /* Larger font size for the input field */
+        padding: 12px 20px;  /* Add padding for better spacing */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 if st.button("Ask") and user_input:
     response = chatbot_response(user_input)

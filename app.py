@@ -1,7 +1,44 @@
 import streamlit as st
-import base64  # needed for encoding image
+import base64
 
 st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
+
+# --- Custom Banner at Top ---
+st.markdown(
+    """
+    <style>
+    .custom-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;  /* dark banner background */
+        color: white;
+        padding: 15px 30px;
+        font-size: 22px;
+        font-weight: bold;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .custom-banner span {
+        margin-left: 10px;
+    }
+    /* Push chatbot content below banner */
+    .block-container {
+        padding-top: 80px !important;
+        max-width: 900px;
+        margin: auto;
+    }
+    </style>
+
+    <div class="custom-banner">
+        🎓 <span>UTAR University Life Chatbot</span>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:
@@ -68,40 +105,6 @@ def add_bg_from_local(image_file):
     )
 
 add_bg_from_local("graduation_background.png")  
-
-st.markdown(
-    """
-    <style>
-    .custom-banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #111;  /* dark banner background */
-        color: white;
-        padding: 12px 25px;
-        font-size: 22px;
-        font-weight: bold;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    /* Push content below banner */
-    .block-container {
-        padding-top: 80px !important;
-        max-width: 800px;  /* keep chatbot area compact */
-        margin: auto;
-    }
-    </style>
-
-    <div class="custom-banner">
-        🎓 UTAR University Life Chatbot
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# Add spacing so content does not overlap banner
-st.markdown("<br><br><br><br>", unsafe_allow_html=True)
 
 if "history" not in st.session_state:
     st.session_state.history = []

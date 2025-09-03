@@ -28,11 +28,13 @@ st.markdown(
         max-width: 900px;
         margin: auto;
     }
-/* Custom input label styling (as a workaround) */
+
+    /* Custom input label styling (as a workaround) */
     .input-label {
         font-size: 24px;
         font-weight: bold;
     }
+
     </style>
 
     <div class="custom-banner">
@@ -123,6 +125,7 @@ def chatbot_response(user_input):
 
     return " Sorry, I do not know anything about that. Attempt to inquire about library, exams, cafeteria, sports, WiFi, bus, admin office or lecturers."
 
+# Add a custom label above the input box with larger text
 st.markdown('<div class="input-label">Questions about life in the university:</div>', unsafe_allow_html=True)
 
 user_input = st.text_input("")

@@ -7,10 +7,11 @@ st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", 
 st.markdown(
     """
     <style>
+    /* Banner in top-left only */
     .custom-banner {
-        position: absolute;   /* stick to the top-left corner */
-        top: 8px;             /* just below the black Streamlit nav */
-        left: 15px;           /* offset from the left */
+        position: fixed;   /* fixed so it stays at top-left */
+        top: 10px;         /* a little spacing below Streamlit navbar */
+        left: 15px;        /* offset from left edge */
         background-color: #111;  
         color: white;
         padding: 8px 16px;
@@ -19,9 +20,9 @@ st.markdown(
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         z-index: 9999;
-        display: inline-flex; /* keep it compact */
+        display: inline-flex;
         align-items: center;
-        width: auto;          /* banner only as wide as its content */
+        width: auto;       /* only as wide as needed */
     }
     .custom-banner span {
         margin-left: 8px;
@@ -34,6 +35,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 

@@ -3,29 +3,33 @@ import base64
 
 st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
 
-# --- Custom Banner at Top (below Streamlit navbar) ---
+# --- Custom Banner at Top ---
 st.markdown(
     """
     <style>
-    /* Banner in top-left only */
     .custom-banner {
-        position: fixed;   /* fixed so it stays at top-left */
-        top: 10px;         /* a little spacing below Streamlit navbar */
-        left: 15px;        /* offset from left edge */
-        background-color: #111;  
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;  /* dark banner background */
         color: white;
-        padding: 8px 16px;
-        font-size: 18px;
+        padding: 15px 30px;
+        font-size: 22px;
         font-weight: bold;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        z-index: 9999;
-        display: inline-flex;
+        z-index: 1000;
+        display: flex;
         align-items: center;
-        width: auto;       /* only as wide as needed */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
     .custom-banner span {
-        margin-left: 8px;
+        margin-left: 10px;
+    }
+    /* Push chatbot content below banner */
+    .block-container {
+        padding-top: 80px !important;
+        max-width: 900px;
+        margin: auto;
     }
     </style>
 
@@ -35,10 +39,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-
-
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as f:

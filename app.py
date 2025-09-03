@@ -23,7 +23,7 @@ def add_bg_from_local(image_file):
     )
 
 # Call the function with your image
-add_bg_from_local("graduation_background.jpg")  # make sure this file is inside your repo
+add_bg_from_local("graduation_background.png")  # make sure this file is inside your repo
 
 # Title
 st.title("🎓 University Life Chatbot")

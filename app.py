@@ -53,8 +53,8 @@ def add_bg_from_local(image_file):
             background-repeat: no-repeat;
         }}
 
-       .stApp, .stMarkdown, .stText, .stSubheader, .stHeader, .stTitle, p, div {{
-        color: black !important;
+       .block-container, .block-container p, .block-container h1, .block-container h2, .block-container h3 {{
+            color: black !important;
         }}
 
        .chat-box {{

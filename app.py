@@ -28,6 +28,10 @@ st.markdown(
         max-width: 900px;
         margin: auto;
     }
+    .stTextInput input {
+        font-size: 20px; /* Larger font size */
+        padding: 12px 20px; /* Add padding for better spacing */
+    }
     </style>
 
     <div class="custom-banner">

@@ -3,16 +3,15 @@ import base64
 
 st.set_page_config(page_title="UTAR University Life Chatbot", page_icon="🎓", layout="wide")
 
-# --- Custom Banner at Top (below Streamlit navbar) ---
+# --- Custom Banner at Top Left (below Streamlit navbar) ---
 st.markdown(
     """
     <style>
     .custom-banner {
-        position: relative;   /* relative so it doesn't conflict with Streamlit nav */
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #111;  /* dark banner background */
+        position: fixed;    /* Fixed so it stays on top */
+        top: 10px;          /* Distance from top */
+        left: 10px;         /* Distance from left */
+        background-color: #111;
         color: white;
         padding: 15px 30px;
         font-size: 22px;
@@ -21,12 +20,10 @@ st.markdown(
         display: flex;
         align-items: center;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        margin-bottom: 20px;  /* spacing before chatbot starts */
     }
     .custom-banner span {
         margin-left: 10px;
     }
-    /* Push chatbot content below banner */
     .block-container {
         max-width: 900px;
         margin: auto;
@@ -52,59 +49,51 @@ def add_bg_from_local(image_file):
             background-position: center;
             background-repeat: no-repeat;
         }}
-
-       .block-container, .block-container p, .block-container h1, .block-container h2, .block-container h3 {{
+        .block-container, .block-container p, .block-container h1, .block-container h2, .block-container h3 {{
             color: black !important;
         }}
-
-       .chat-box {{
-           background: rgba(255, 255, 255, 0.9);
-           padding: 15px;
-           border-radius: 12px;
-           margin-top: 10px;
-           max-width: 800px;
-           max-height: 300px;   
-           overflow-y: auto;    
+        .chat-box {{
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+            max-width: 800px;
+            max-height: 300px;   
+            overflow-y: auto;    
         }}
-
-       .chat-box p {{
-           margin: 5px 0;
-           font-size: 16px;
+        .chat-box p {{
+            margin: 5px 0;
+            font-size: 16px;
         }}
-
-       .chat-box b {{
-           color: #e74c3c; 
+        .chat-box b {{
+            color: #e74c3c; 
         }}
-
-
-       .chat-box hr {{
-           border: 0;
-           border-top: 1px dashed #bbb;  
-           margin: 8px 0;
+        .chat-box hr {{
+            border: 0;
+            border-top: 1px dashed #bbb;  
+            margin: 8px 0;
         }}
         .stTextInput input {{
-           color: white !important;
+            color: white !important;
         }}
-
         .stButton>button {{
-           background-color: #e74c3c;   
-           color: white;
-           border-radius: 8px;
-           border: none;
-           padding: 6px 16px;
-           font-weight: bold;
+            background-color: #e74c3c;   
+            color: white;
+            border-radius: 8px;
+            border: none;
+            padding: 6px 16px;
+            font-weight: bold;
         }}
         .stButton>button:hover {{
-           background-color: #c0392b;  
-           color: white;
+            background-color: #c0392b;  
+            color: white;
         }}
-
         </style>
         """,
         unsafe_allow_html=True
     )
 
-add_bg_from_local("graduation_background.png")  
+add_bg_from_local("graduation_background.png")
 
 if "history" not in st.session_state:
     st.session_state.history = []
